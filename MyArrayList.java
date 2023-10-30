@@ -20,7 +20,7 @@ public class MyArrayList<E> {
 	// elements is full
 
 	public void growSize() {
-		if (size + 1 >= elements.length * 0.75f) {
+		if (size >= elements.length) {
 			int newSize = elements.length * 2;
 			E[] growLength = (E[]) new Object[newSize];
 			for (int i = 0; i < size; i++) {
