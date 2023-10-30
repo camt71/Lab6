@@ -161,10 +161,10 @@ public class MyArrayList<E> {
 	// It is used to remove the first occurrence of the
 	// specified element.
 	public boolean remove(E e) {
-		if (!contains(e))
+		if (indexOf(e)==-1)
 			return false;
 		else
-			for (int i = indexOf(e); i < size; i++) {
+			for (int i = indexOf(e); i < size-1; i++) {
 				elements[i] = elements[i + 1];
 			}
 		size--;
@@ -196,12 +196,6 @@ public class MyArrayList<E> {
 		arrayList.add(3);
 		arrayList.add(5);
 		arrayList.add(8);
-		arrayList.add(0);
-		arrayList.add(9);
-		arrayList.add(8);
-		arrayList.add(0);
-		arrayList.add(9);
-		
-		System.out.println(arrayList.lastIndexOf(8));
+		System.out.println(arrayList.indexOf(3));
 	}
 }
